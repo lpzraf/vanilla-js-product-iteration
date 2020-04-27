@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="forInSample()">Iterating product list using for/in.</button>
+    <ul id="product-data">     
+    </ul>
+
+ <script>
+     'use strict'
+     function forInSample() {
+         let product = {
+             'productID': 680,
+             'name':'HL Road Frame - Black, 58',
+             'productNumber':'FR-R92B-58',
+             'color':'Black',
+             'standardCost': 1059.31,
+             'listPrice':'1431.50',
+             calculatedGrosProfit: function() {
+                 return this.listPrice - this.standardCost;
+             }
+         };
+        for (const key in product) {
+            // Log to test the data on the console
+            console.log("'" + key + "'='" + product[key])
+
+            // Append product data on the bullet list.
+            var list = document.getElementById('product-data');
+            var bullet = document.createElement('li');
+            bullet.appendChild(document.createTextNode(key + " = " + product[key]));
+            list.appendChild(bullet);
+        }
+     }
+
+ </script>   
+</body>
+</html>
