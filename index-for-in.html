@@ -29,8 +29,8 @@
             console.log("'" + key + "'='" + product[key])
 
             // Append product data on the bullet list.
-            var list = document.getElementById('product-data');
-            var bullet = document.createElement('li');
+            let list = document.getElementById('product-data');
+            let bullet = document.createElement('li');
             bullet.appendChild(document.createTextNode(key + " = " + product[key]));
             list.appendChild(bullet);
         }
